@@ -8,13 +8,12 @@
 	<title>Document</title>
 </head>
 <body>
+	<form action="{% url 'person_new' %}" method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ form }}
+		<button type="submit">Salvar</button>
 
-	<ul>
-		{% for person in persons  %}
-			<li>{{ person.first_name }}</li>
-		{% endfor %}
-	</ul>
-	<br>
-	<a href="{% url 'person_new' %}">Novo cliente</a>
+	</form>
+
 </body>
 </html>
